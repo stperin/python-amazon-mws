@@ -73,6 +73,27 @@ All dependencies for working on `mws` are in `requirements.txt` and `docs/requir
 ## Tests
 Tests are run with pytest. We test against Python 2.7 and supported Python 3.x versions with Travis.
 
+## Available functions (to be completed)
+
+- Orders
+  - list_orders(self, marketplaceids=None, created_after=None, created_before=None,
+                    lastupdatedafter=None, lastupdatedbefore=None, orderstatus=(),
+                    fulfillment_channels=(), payment_methods=(), buyer_email=None,
+                    seller_orderid=None, max_results='100', next_token=None)
+  - get_order(self, amazon_order_ids)
+  - list_order_items(self, amazon_order_id=None, next_token=None)
+
+- Products
+  - list_matching_products(self, marketplaceid, query, contextid=None)
+  Returns a list of products and their attributes, ordered by relevancy, based on a search query that you specify.
+  Your search query can be a phrase that describes the product or it can be a product identifier such as a UPC, EAN, ISBN, or JAN.
+  
+  - get_matching_product(self, marketplaceid, asins)
+  Returns a list of products and their attributes, based on a list of ASIN values that you specify.
+        
+  - get_matching_product_for_id(self, marketplaceid, type_, ids)
+  Returns a list of products and their attributes, based on a list of product identifier values (ASIN, SellerSKU, UPC, EAN, ISBN, GCID  and JAN). The identifier type is case sensitive. Added in Fourth Release, API version 2011-10-01
+
 ## Documentation
 Docs are built using Sphinx. Change into the `docs/` directory and install any dependencies from the `requirements.txt` there.
 
